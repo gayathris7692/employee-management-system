@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit Employee</h1>
+
+    <form action="/edit/{{ employee['id'] }}" method="POST">
+
+        <input
+            type="text"
+            name="name"
+            value="{{ employee['name'] }}"
+            placeholder="Employee Name"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            value="{{ employee['email'] }}"
+            placeholder="Email"
+            required
+        >
+
+        <input
+            type="text"
+            name="department"
+            value="{{ employee['department'] }}"
+            placeholder="Department"
+            required
+        >
+
+        <input
+            type="number"
+            name="salary"
+            value="{{ employee['salary'] }}"
+            placeholder="Salary"
+            required
+        >
+
+        <button type="submit">Update Employee</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">← Back to Employee List</a>
+
+</div>
+
+</body>
+</html>
